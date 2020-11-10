@@ -1,0 +1,66 @@
+'Design your own Sokoban levels here.
+'Include a brief explanation to each level why the algorithmic improvement
+'  that is targeted makes a big difference on this level
+
+'Level improving from ucs to ucs -d
+'This level has a lot of corner and edge deadlock which is possible
+'for the box to reach it so doing a dead point detection
+'cuts down a lot of states which is a big algorithmic improvement
+Level p5-level-1
+#####
+# @ ####
+#      #
+# $ $$ #
+##$##  #
+#   ####
+# ..  #
+##..  #
+ ###  #
+   ####
+
+'Level improving from ucs -d to f -d
+'Action compression reduces the number of states by checking if 
+'a position is reachable by the player, where ucs doesn't.
+'This level has certain states where the boxes aren't in dead points but 
+'then they are unreachable by the player   
+Level p5-level-2
+#####
+#   ##
+# $  #
+## $ ####
+ ###@.  #
+  #  .# #
+  #     #
+  #######
+
+
+'Level improving from f -d to fa -d
+'Since the traversal area is small, having a heuristic will force
+'the player to focus on moving boxes close to the player into targets
+'close to it currently 
+Level p5-level-3
+########
+#@     #
+# .$$. #
+# $..$ #
+# $..$ #
+# .$$. #
+#      #
+########
+
+
+'Level improving from fa -d to fa2 -d
+'The new heuristic considers a simple deadlock when two boxes are pushed 
+'against a wall and penalizes the search algorithm. This level has a few
+'simple deadlocks embedded
+Level p5-level-4
+ ####
+ #  ###
+ # $$ #
+##... #
+#  @$ #
+#   ###
+#####
+
+'Optional: level for the Sokoban contest
+Level p5-contest
